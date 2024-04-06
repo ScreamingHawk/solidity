@@ -2314,6 +2314,9 @@ void IRGeneratorForStatements::endVisit(IndexAccess const& _indexAccess)
 
 				break;
 			}
+			case DataLocation::Transient:
+				solUnimplementedAssert(false, "Transient data location is only supported for value types.");
+				break;
 			case DataLocation::Memory:
 			{
 				std::string const indexAccessFunction = m_utils.memoryArrayIndexAccessFunction(arrayType);

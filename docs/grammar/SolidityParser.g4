@@ -262,7 +262,7 @@ userDefinedValueTypeDefinition:
  * The declaration of a state variable.
  */
 stateVariableDeclaration
-locals [boolean constantnessSet = false, boolean visibilitySet = false, boolean overrideSpecifierSet = false]
+locals [boolean constantnessSet = false, boolean visibilitySet = false, boolean overrideSpecifierSet = false, boolean transientLocationSet = false]
 :
 	type=typeName
 	(
@@ -272,8 +272,9 @@ locals [boolean constantnessSet = false, boolean visibilitySet = false, boolean 
 		| {!$constantnessSet}? Constant {$constantnessSet = true;}
 		| {!$overrideSpecifierSet}? overrideSpecifier {$overrideSpecifierSet = true;}
 		| {!$constantnessSet}? Immutable {$constantnessSet = true;}
+		| {!$transientLocationSet}? Transient {$transientLocationSet = true;}
 	)*
-	name=identifier
+	(transientName=Transient | name=identifier)
 	(Assign initialValue=expression)?
 	Semicolon;
 
@@ -364,7 +365,14 @@ locals [boolean visibilitySet = false, boolean mutabilitySet = false]
 /**
  * The declaration of a single variable.
  */
-variableDeclaration: type=typeName location=dataLocation? name=identifier;
+variableDeclaration
+:
+	type=typeName
+	(
+		transientLocation=Transient name=identifier?
+		| location=dataLocation? name=identifier
+	);
+
 dataLocation: Memory | Storage | Calldata;
 
 /**
@@ -419,7 +427,7 @@ inlineArrayExpression: LBrack (expression ( Comma expression)* ) RBrack;
 /**
  * Besides regular non-keyword Identifiers, some keywords like 'from' and 'error' can also be used as identifiers.
  */
-identifier: Identifier | From | Error | Revert | Global;
+identifier: Identifier | From | Error | Revert | Global | Transient;
 
 literal: stringLiteral | numberLiteral | booleanLiteral | hexStringLiteral | unicodeStringLiteral;
 

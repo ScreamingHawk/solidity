@@ -8,6 +8,12 @@ contract A {
     modifier mod7(string calldata storage a) { _; }
     modifier mod8(string calldata memory a) { _; }
     modifier mod9(string calldata calldata a) { _; }
+    modifier modA(string transient storage a) { _; }
+    modifier modB(string transient memory a) { _; }
+    modifier modC(string transient calldata a) { _; }
+    modifier modD(string storage transient a) { _; }
+    modifier modE(string memory transient a) { _; }
+    modifier modF(string calldata transient a) { _; }
 }
 // ----
 // ParserError 3548: (46-53): Location already specified.
@@ -19,3 +25,9 @@ contract A {
 // ParserError 3548: (350-357): Location already specified.
 // ParserError 3548: (402-408): Location already specified.
 // ParserError 3548: (453-461): Location already specified.
+// ParserError 3548: (507-514): Location already specified.
+// ParserError 3548: (560-566): Location already specified.
+// ParserError 3548: (612-620): Location already specified.
+// ParserError 3548: (664-673): Location already specified.
+// ParserError 3548: (716-725): Location already specified.
+// ParserError 3548: (770-779): Location already specified.
