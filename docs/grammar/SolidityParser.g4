@@ -365,14 +365,7 @@ locals [boolean visibilitySet = false, boolean mutabilitySet = false]
 /**
  * The declaration of a single variable.
  */
-variableDeclaration
-:
-	type=typeName
-	(
-		transientLocation=Transient name=identifier?
-		| location=dataLocation? name=identifier
-	);
-
+variableDeclaration: type=typeName location=dataLocation? name=identifier;
 dataLocation: Memory | Storage | Calldata;
 
 /**

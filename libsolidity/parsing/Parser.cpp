@@ -887,13 +887,11 @@ ASTPointer<VariableDeclaration> Parser::parseVariableDeclaration(
 				}
 			}
 			else if (
-					(_options.kind == VarDeclKind::State || _options.allowLocationSpecifier) &&
-					token == Token::Identifier &&
-					m_scanner->currentLiteral() == "transient" &&
-					m_scanner->peekNextToken() != Token::Assign &&
-					m_scanner->peekNextToken() != Token::Semicolon &&
-					m_scanner->peekNextToken() != Token::Comma &&
-					m_scanner->peekNextToken() != Token::RParen
+				_options.kind == VarDeclKind::State &&
+				token == Token::Identifier &&
+				m_scanner->currentLiteral() == "transient" &&
+				m_scanner->peekNextToken() != Token::Assign &&
+				m_scanner->peekNextToken() != Token::Semicolon
 				)
 				{
 					if (location != VariableDeclaration::Location::Unspecified)
