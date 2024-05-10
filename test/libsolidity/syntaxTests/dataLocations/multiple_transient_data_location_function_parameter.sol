@@ -3,4 +3,4 @@ contract C {
 }
 
 // ----
-// ParserError 3548: (45-54): Location already specified.
+// ParserError 2314: (45-54): Expected ',' but got identifier

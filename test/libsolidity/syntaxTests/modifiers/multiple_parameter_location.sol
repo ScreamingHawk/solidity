@@ -25,9 +25,4 @@ contract A {
 // ParserError 3548: (350-357): Location already specified.
 // ParserError 3548: (402-408): Location already specified.
 // ParserError 3548: (453-461): Location already specified.
-// ParserError 3548: (507-514): Location already specified.
-// ParserError 3548: (560-566): Location already specified.
-// ParserError 3548: (612-620): Location already specified.
-// ParserError 3548: (664-673): Location already specified.
-// ParserError 3548: (716-725): Location already specified.
-// ParserError 3548: (770-779): Location already specified.
+// ParserError 2314: (507-514): Expected ',' but got 'storage'

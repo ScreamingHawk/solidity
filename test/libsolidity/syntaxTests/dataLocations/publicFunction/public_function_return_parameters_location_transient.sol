@@ -1,5 +1,5 @@
 contract C {
-    function h() public pure returns(uint[] transient x) {}
+    function h() public pure returns(uint[] transient) {}
 }
 // ----
-// TypeError 6651: (50-68): Data location must be "memory" or "calldata" for return parameter in function, but "transient" was given.
+// TypeError 6651: (50-66): Data location must be "memory" or "calldata" for return parameter in function, but none was given.

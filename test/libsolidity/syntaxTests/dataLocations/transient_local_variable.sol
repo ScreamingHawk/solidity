@@ -4,4 +4,4 @@ contract C {
     }
 }
 // ----
-// TypeError 6651: (52-68): Data location can only be specified for array, struct or mapping types, but "transient" was given.
+// ParserError 2314: (67-68): Expected ';' but got identifier

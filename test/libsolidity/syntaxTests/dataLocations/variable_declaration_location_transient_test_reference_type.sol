@@ -11,4 +11,4 @@ contract test {
     }
 }
 // ----
-// UnimplementedFeatureError: Transient data location is only supported for value types.
+// ParserError 2314: (148-149): Expected ';' but got identifier

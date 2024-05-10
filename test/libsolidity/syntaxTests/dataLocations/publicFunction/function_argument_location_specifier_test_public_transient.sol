@@ -1,5 +1,5 @@
 contract test {
-    function f(bytes transient x) public;
+    function f(bytes transient) public;
 }
 // ----
-// TypeError 6651: (31-48): Data location must be "memory" or "calldata" for parameter in function, but "transient" was given.
+// TypeError 6651: (31-46): Data location must be "memory" or "calldata" for parameter in function, but none was given.
