@@ -6,7 +6,7 @@ Language Features:
 
 Compiler Features:
  * Parser: Accept declaration of state variables with ``transient`` data location.
- 
+
 
 Bugfixes:
  * Commandline Interface: Fix ICE when the optimizer is disabled and an empty/blank string is used for ``--yul-optimizations`` sequence.
