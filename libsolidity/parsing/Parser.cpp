@@ -892,13 +892,13 @@ ASTPointer<VariableDeclaration> Parser::parseVariableDeclaration(
 				m_scanner->currentLiteral() == "transient" &&
 				m_scanner->peekNextToken() != Token::Assign &&
 				m_scanner->peekNextToken() != Token::Semicolon
-				)
-				{
-					if (location != VariableDeclaration::Location::Unspecified)
-						parserError(ErrorId{3548}, "Location already specified.");
-					else
-						location = VariableDeclaration::Location::Transient;
-				}
+			)
+			{
+				if (location != VariableDeclaration::Location::Unspecified)
+					parserError(ErrorId{3548}, "Location already specified.");
+				else
+					location = VariableDeclaration::Location::Transient;
+			}
 			else
 				break;
 			nodeFactory.markEndPosition();

@@ -272,7 +272,7 @@ locals [boolean constantnessSet = false, boolean visibilitySet = false, boolean 
 		| {!$constantnessSet}? Constant {$constantnessSet = true;}
 		| {!$overrideSpecifierSet}? overrideSpecifier {$overrideSpecifierSet = true;}
 		| {!$constantnessSet}? Immutable {$constantnessSet = true;}
-		| {!$transientLocationSet}? Transient {$transientLocationSet = true;}
+		| {!$locationSet}? Transient {$locationSet = true;}
 	)*
 	(transientName=Transient | name=identifier)
 	(Assign initialValue=expression)?

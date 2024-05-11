@@ -8,8 +8,8 @@
 	"settings": {
 		"outputSelection": {
 			"fileA": {
-				"A": [ "storageLayout" ],
-				"": [ "storageLayout" ]
+				"A": ["storageLayout"],
+				"": ["storageLayout"]
 			}
 		}
 	}
