@@ -15,17 +15,41 @@
                         {
                             "astId": 5,
                             "contract": "fileA:A",
-                            "label": "b",
+                            "label": "y",
                             "offset": 0,
                             "slot": "1",
-                            "type": "t_bytes32"
+                            "type": "t_uint256"
                         },
                         {
                             "astId": 7,
                             "contract": "fileA:A",
-                            "label": "addr",
+                            "label": "b",
                             "offset": 0,
                             "slot": "2",
+                            "type": "t_bytes32"
+                        },
+                        {
+                            "astId": 9,
+                            "contract": "fileA:A",
+                            "label": "c",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_bytes32"
+                        },
+                        {
+                            "astId": 11,
+                            "contract": "fileA:A",
+                            "label": "a",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 13,
+                            "contract": "fileA:A",
+                            "label": "z",
+                            "offset": 0,
+                            "slot": "5",
                             "type": "t_address"
                         }
                     ],

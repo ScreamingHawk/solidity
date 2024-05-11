@@ -1,9 +1,7 @@
 {
 	"language": "Solidity",
 	"sources": {
-		"fileA": {
-			"content": "//SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.0;\ncontract A { uint transient x; bytes32 transient b; address transient addr; }"
-		}
+		"fileA": {"urls": ["storage_layout_transient_value_types/in.sol"]}
 	},
 	"settings": {
 		"outputSelection": {

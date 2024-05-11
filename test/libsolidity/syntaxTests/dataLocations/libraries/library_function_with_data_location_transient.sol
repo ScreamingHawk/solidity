@@ -1,19 +1,19 @@
 library L {
-    function f(uint[] transient) private pure returns (uint[] transient) { }
-    function g(uint[] transient) internal pure returns (uint[] transient) { }
-    function h(uint[] transient) public pure returns (uint[] transient) { }
-    function i(uint[] transient) external pure returns (uint[] transient) { }
+    function f1(uint[] transient) private pure { }
+    function f2() private pure returns (uint[] transient) { }
+    function g1(uint[] transient) internal pure { }
+    function g2() internal pure returns (uint[] transient) { }
+    function h1(uint[] transient) public pure { }
+    function h2() public pure returns (uint[] transient) { }
+    function i1(uint[] transient) external pure { }
+    function i2() external pure returns (uint[] transient) { }
 }
 // ----
-// DeclarationError 2333: (67-83): Identifier already declared.
-// DeclarationError 2333: (145-161): Identifier already declared.
-// DeclarationError 2333: (221-237): Identifier already declared.
-// DeclarationError 2333: (299-315): Identifier already declared.
-// TypeError 6651: (27-43): Data location must be "storage", "memory" or "calldata" for parameter in function, but none was given.
-// TypeError 6651: (67-83): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
-// TypeError 6651: (104-120): Data location must be "storage", "memory" or "calldata" for parameter in function, but none was given.
-// TypeError 6651: (145-161): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
-// TypeError 6651: (182-198): Data location must be "storage", "memory" or "calldata" for parameter in function, but none was given.
-// TypeError 6651: (221-237): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
-// TypeError 6651: (258-274): Data location must be "storage", "memory" or "calldata" for parameter in external function, but none was given.
-// TypeError 6651: (299-315): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
+// TypeError 6651: (28-44): Data location must be "storage", "memory" or "calldata" for parameter in function, but none was given.
+// TypeError 6651: (103-119): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
+// TypeError 6651: (141-157): Data location must be "storage", "memory" or "calldata" for parameter in function, but none was given.
+// TypeError 6651: (218-234): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
+// TypeError 6651: (256-272): Data location must be "storage", "memory" or "calldata" for parameter in function, but none was given.
+// TypeError 6651: (329-345): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
+// TypeError 6651: (367-383): Data location must be "storage", "memory" or "calldata" for parameter in external function, but none was given.
+// TypeError 6651: (444-460): Data location must be "storage", "memory" or "calldata" for return parameter in function, but none was given.
