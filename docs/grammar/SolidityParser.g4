@@ -262,7 +262,7 @@ userDefinedValueTypeDefinition:
  * The declaration of a state variable.
  */
 stateVariableDeclaration
-locals [boolean constantnessSet = false, boolean visibilitySet = false, boolean overrideSpecifierSet = false, boolean transientLocationSet = false]
+locals [boolean constantnessSet = false, boolean visibilitySet = false, boolean overrideSpecifierSet = false, boolean locationSet = false]
 :
 	type=typeName
 	(
@@ -274,7 +274,7 @@ locals [boolean constantnessSet = false, boolean visibilitySet = false, boolean 
 		| {!$constantnessSet}? Immutable {$constantnessSet = true;}
 		| {!$locationSet}? Transient {$locationSet = true;}
 	)*
-	(transientName=Transient | name=identifier)
+	name=identifier
 	(Assign initialValue=expression)?
 	Semicolon;
 
