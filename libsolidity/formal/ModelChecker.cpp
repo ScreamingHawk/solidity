@@ -62,6 +62,15 @@ bool ModelChecker::isPragmaPresent(std::vector<std::shared_ptr<SourceUnit>> cons
 
 void ModelChecker::checkRequestedSourcesAndContracts(std::vector<std::shared_ptr<SourceUnit>> const& _sources)
 {
+	struct TransientDataLocationChecker: ASTConstVisitor
+	{
+		TransientDataLocationChecker(SourceUnit const& _sourceUnit) { _sourceUnit.accept(*this); }
+		void endVisit(VariableDeclaration const& _var) { solUnimplementedAssert(_var.referenceLocation() != VariableDeclaration::Location::Transient, ""); }
+	};
+
+	for (auto const& source: _sources)
+		TransientDataLocationChecker checker(*source);
+
 	std::map<std::string, std::set<std::string>> exist;
 	for (auto const& source: _sources)
 		for (auto node: source->nodes())
