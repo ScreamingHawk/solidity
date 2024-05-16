@@ -2,7 +2,7 @@
 
 Language Features:
  * Introduce a new overload ``require(bool, Error)`` that allows usage of ``require`` functions with custom errors. This feature is available in the ``via-ir`` pipeline only.
- * Accept declaration of state variables with ``transient`` data location. This is only supported at the parsing stage of the compiler, further steps such as code generation are nor supported.
+ * Accept declarations of state variables with ``transient`` data location (parser support only, no code generation yet).
 
 
 Compiler Features:
