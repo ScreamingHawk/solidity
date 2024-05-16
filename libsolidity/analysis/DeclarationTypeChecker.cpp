@@ -472,7 +472,7 @@ void DeclarationTypeChecker::endVisit(VariableDeclaration const& _variable)
 				typeLoc = DataLocation::Transient;
 				break;
 			default:
-				solAssert(false, "");
+				solAssert(false);
 				break;
 		}
 	}

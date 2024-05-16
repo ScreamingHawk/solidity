@@ -67,7 +67,7 @@ void ModelChecker::checkRequestedSourcesAndContracts(std::vector<std::shared_ptr
 		struct TransientDataLocationChecker: ASTConstVisitor
 		{
 			TransientDataLocationChecker(SourceUnit const& _sourceUnit) { _sourceUnit.accept(*this); }
-			void endVisit(VariableDeclaration const& _var) { solUnimplementedAssert(_var.referenceLocation() != VariableDeclaration::Location::Transient, ""); }
+			void endVisit(VariableDeclaration const& _var) { solUnimplementedAssert(_var.referenceLocation() != VariableDeclaration::Location::Transient); }
 		};
 
 		for (auto const& source: _sources)
